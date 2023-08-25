@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Dosya Okuma";
+}
+<h2>Ajax İle Dosya Okuma</h2>
+
+<div id="divv">
+    <button id="j">Dosya Oku</button>
+    <button id="j1">Sayfa Oku</button>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#j").click(function(){
+            $.ajax({
+                url:"/Content/Deneme.txt",
+                datatype:"text",
+                success:function(data){
+                    $("#divv").html(data);
+                },
+                Error:function(data){
+                    alert("dosya okunmadı");
+                }
+            })
+        })
+    })
+
+    $(document).ready(function () {
+        $("#j1").click(function () {
+            $.ajax({
+                url: "/Content/index.html",
+                datatype: "text",
+                success: function (data) {
+                    $("#divv").html(data);
+                },
+                Error: function (data) {
+                    alert("sayfa okunmadı");
+                }
+            })
+        })
+    })
+</script>

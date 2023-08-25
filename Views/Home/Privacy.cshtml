@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>Dosya Veri Okuma İşlemleri</h2>
+<div id="myDiv">
+    <button id="myBtn">Veri Al</button>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#myBtn").click(function(){
+            $("#myDiv").load("/Content/Deneme.txt",function(response,status,x){
+                if(status=="success")
+                    alert("başarılı"+"\n"+x.status+"\n"+x.statusText)
+                if(status=="error")
+                    alert("başarısız")
+            })
+        })
+    })
+</script>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Animasyonlu Div Yapımı";
+}
+<h2>Jquery İle Animasyonlu Div Yapımı</h2>
+
+<input id="goster" type="button" value="İNANILMAZ FIRSAT" onclick="goster()"/>
+<div id="divv" style="background-color:red;color:azure;display:none;font-size:20px;height:100px">
+    Deneme 1 2 3
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    function goster(){
+        $("#divv").toggle(500);
+    }
+</script>

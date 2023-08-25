@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<universite>
+<ogrenci>
+	<bolum>Bilgisayar Mühendisliği</bolum>
+	<ogrencino>191312030</ogrencino>
+	<ad>Zeynep</ad>
+</ogrenci>
+<ogrenci>
+	<bolum>Bilgisayar Programcılığı</bolum>
+	<ogrencino>191312030</ogrencino>
+	<ad>Muhammet</ad>
+</ogrenci>
+</universite>

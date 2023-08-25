@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<button type="button" id="j1">CLick Me j1</button>
+<button type="button" id="j2">CLick Me j2</button>
+<button type="button" id="j3">Gizle</button>
+<button type="button" id="j4">Göster</button>
+<button type="button" id="j5">Toggle</button>
+<button type="button" id="j6">Deneme</button>
+
+<br />
+
+<p id="p1">Selam Mudo</p>
+
+<p>Merhaba Dünya</p>
+
+<p id="add"></p>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    //$("button").click(function(){
+    //    alert("deneme 1 2 3")
+    //})
+
+    $("#j1").click(function () {
+        alert("deneme 1 2 3")
+    })
+
+    $("#j2").click(function () {
+        alert("deneme 1 2 3")
+    })
+
+    $("#j3").click(function () {
+        $("#p1").hide()
+    })
+
+    $("#j4").click(function () {
+        $("#p1").show()
+    })
+
+    $("#j5").click(function () {
+        $("#p1").toggle()
+    })
+
+    $("#j6").css({"background-color":"blue","color":"white"})
+    $("#j6").click(function () {
+        $("#add").append("selam mudo ben kelebek")
+    })
+
+    $("p").on({mouseover:function(){
+        $(this).css("color","red");
+    },
+        mouseleave:function(){
+            $(this).css("color","blue");
+        }
+    });
+</script>

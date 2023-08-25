@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Json Parse";
+}
+<h2>Web Sitesinden Json Parse İşlemleri</h2>
+
+<button id="j1">Json OKU</button>
+
+<ul id="ull"></ul>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#j1").click(function(){
+            $.getJSON("https://services.odata.org/v3/odata/odata.svc/Products?$format=json",function(veri){
+                $.each(veri.value,function(key,item){
+                    $("#ull").append("<li>"+item.Name+"---"+item.Description+"</li>")
+                })
+             })
+        })
+    });
+
+
+</script>

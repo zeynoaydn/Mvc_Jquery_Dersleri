@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Parse";
+}
+<h2>Ajax XML Parse İşlemleri</h2>
+
+<div id="divv">
+    <ul>
+
+    </ul>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#divv").append("<p><b>Bölüm</b><b>ÖğrenciNo</b><b>Ad</b></p><br/>");
+
+        $.ajax({
+            type: "GET",
+            url: "/Content/universite.xml",
+            dataType: "xml",
+            success: function (xml) {
+                $(xml).find('ogrenci').each(function () {
+                    $("#divv").append("<p><li>" +
+                        $(this).find('bolum').text() + "</li><li>" +
+                        $(this).find('ogrencino').text() + "</li><li>" +
+                        $(this).find('ad').text() + "</li></p><br/>");
+                });
+            },
+            error: function () {
+                alert("XML okunmadı");
+            }
+        });
+    });
+
+
+</script>
